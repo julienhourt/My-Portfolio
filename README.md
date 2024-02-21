@@ -1,4 +1,4 @@
-# Welcome in my portfolio ! 
+# Welcome to my portfolio ! 
 
 I have chosen to showcase my technical and analytical abilities here. Please refer to the various folders to view my work ! 📂<br> 
 
