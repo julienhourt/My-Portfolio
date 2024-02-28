@@ -18,10 +18,10 @@ FROM customers;
 
 /* How many clients do we have per country? */
 
-SELECT i.BillingCountry AS Country, count(i.InvoiceId) AS Musiques_Vendues 
+SELECT i.BillingCountry AS Country, count(i.InvoiceId) AS Tracks_Sold
 FROM invoices i
 GROUP BY i.BillingCountry
-ORDER BY Musiques_Vendues DESC;
+ORDER BY Tracks_Sold DESC;
 
 
 /* Who are the Brazilian clients? */
@@ -55,16 +55,16 @@ FROM invoice_items ii;
 
 
 /* What are the top 3 best-selling music genres? */
-SELECT g.Name, count(ii.InvoiceLineId) AS Musiques_Vendues 
+SELECT g.Name, count(ii.InvoiceLineId) AS Tracks_Sold 
 FROM genres g JOIN tracks t ON g.GenreId = t.GenreId JOIN invoice_items ii ON t.TrackId = ii.TrackId
 GROUP BY g.Name
-ORDER BY Musiques_Vendues DESC
+ORDER BY Tracks_Sold DESC
 LIMIT 3;
 
 
 /* Display genres that have sold fewer than 100 songs.*/
-SELECT g.Name, count(ii.InvoiceLineId) AS Musiques_Vendues 
+SELECT g.Name, count(ii.InvoiceLineId) AS Tracks_Sold 
 FROM genres g JOIN tracks t ON g.GenreId = t.GenreId JOIN invoice_items ii ON t.TrackId = ii.TrackId
 GROUP BY g.Name
 HAVING (count(ii.InvoiceLineId) < 100)
-ORDER BY Musiques_Vendues DESC;
+ORDER BY Tracks_Sold DESC;
