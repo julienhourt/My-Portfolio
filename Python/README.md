@@ -1,4 +1,6 @@
 ## PYTHON
-Please find in this folder a selection of my python projects. <br><br>
+Please find here a selection of my python projects. <br><br>
 
-Thank you !
+- Chocolate Project which is a personnal project. (Jupyter Notebook)
+
+Projects are incoming...
